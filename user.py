@@ -1,17 +1,20 @@
 import datetime
 
 class User:
+    account_counter = 1000
+
     def __init__(self, name):
-        self.account_number = generate_account_number()
+        self.account_number = self.generate_account_number()
         self.name = name
         self.balance = 0.0
         self.transaction_history = []
         self.loan_amount = 0.0
 
     def generate_account_number(self):
-        # Generate a unique account number based on some logic
-        # This is just a placeholder implementation
-        return hash(self.name) % 10000
+        account_number = User.account_counter
+        User.account_counter += 1
+        return account_number
+
 
     def deposit(self, amount):
         if amount > 0:
