@@ -1,18 +1,18 @@
 import datetime
 
 class User:
-    account_counter = 1000
+    account_start_num = 1000
 
     def __init__(self, name):
-        self.account_number = self.generate_account_number()
+        self.account_number = self.generate_acc_num()
         self.name = name
         self.balance = 0.0
         self.transaction_history = []
         self.loan_amount = 0.0
 
-    def generate_account_number(self):
-        account_number = User.account_counter
-        User.account_counter += 1
+    def generate_acc_num(self):
+        account_number = User.account_start_num
+        User.account_start_num += 1
         return account_number
 
 
@@ -57,9 +57,6 @@ class User:
             self.transaction_history.append((datetime.datetime.now(), "Loan", self.loan_amount))
             print(f"Loan of {self.loan_amount} granted. Current balance: {self.balance}")
         else:
-            print("Loan already taken. Please repay your existing loan to request a new loan.")
+            print("You Took Loan Before")
 
-    def is_bankrupt(self):
-        if self.balance <= 0:
-            return True
-        return False
+    

@@ -2,15 +2,18 @@ from user import User
 from admin import Admin
 
 def display_menu():
-    print("==== Banking Management System ====")
-    print("1. Create User Account")
-    print("2. Deposit Amount")
-    print("3. Withdraw Amount")
-    print("4. Transfer Amount")
-    print("5. Check Balance")
-    print("6. Check Transaction History")
-    print("7. Request Loan")
-    print("8. Exit")
+    print(' ')
+    print("<============ Banking Management System ============>")
+    print(' ')
+    print(">------------------User-------------------->")
+    print("1. Create User Account, 2. Deposit Amount, 3. Withdraw Amount, 4. Transfer Amount, 5. Check Balance, 6. Check Transaction History, 7. Request Loan")
+    print(' ')
+    print(">>---------------Admin-------------->>")
+    print(".......")
+    print("00. Exit")
+    print(' ')
+    print("<============ Banking Management System ============>")
+
 
 def create_user_account():
     name = input("Enter user name: ")
@@ -78,6 +81,7 @@ def request_loan():
     else:
         print("Invalid account number.")
 
+
 def find_user(account_number):
     for user in users:
         if user.account_number == account_number:
@@ -107,8 +111,10 @@ while True:
         check_transaction_history()
     elif choice == "7":
         request_loan()
-    elif choice == "8":
+    elif choice == "00":
         print("Exiting the program...")
         break
     else:
         print("Invalid choice. Please try again.")
+
+
